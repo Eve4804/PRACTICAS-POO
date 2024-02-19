@@ -135,6 +135,83 @@ public class Arreglo {
             }
         }
     }
+     public int buscarClave(String cve){
+        String s = "";
+        int k;
+        cve = cve.replaceAll("","");
+        if (this.getArr()== null)
+            return -1;
+        else{
+            for (k=0; k< 4; k++){
+                if(cve.equals(this.getArr()[k][0])){//equals es para buscar el valor
+                    return k;
+                }
+            }        
+                    
+        }
+        return -2;    
+    }
+    public String visualizaDatos(String d){
+        String s ="";
+        int i;
+        if(this.getArr()== null)
+            return "";
+        else
+            for (i = 0; i < 4; i++) {
+                if(d.equals(this.getArr()[i][0])){
+                    s += "| Clave: " +this.getArr()[i][0]+ " ";
+                    s += "| Nombre: " +this.getArr()[i][1]+ " ";
+                    s += "| Primer Apellido: " +this.getArr()[i][2]+ " ";
+                    s += "| Mes: " +this.getArr()[i][3]+ " ";
+                    return s;//fue encontrado
+                }
+            }
+        if(s.isEmpty())
+            s="Clave encontrada";
+        return s;
+    }
+    public String visualizaMes(String d){
+         String s ="";
+        int i;
+        if(this.getArr()== null)
+            return "";
+        else
+            for (i = 0; i < 4; i++) {
+                if(d.equals(this.getArr()[i][3])){
+                    s += "| Clave: " +this.getArr()[i][0]+ " ";
+                    s += "| Nombre: " +this.getArr()[i][1]+ " ";
+                    s += "| Primer Apellido: " +this.getArr()[i][2]+ " ";
+                    s += "| Mes: " +this.getArr()[i][3]+ " ";
+                    return s;//fue encontrado
+                }
+            }
+        if(s.isEmpty())
+            s="Clave encontrada";
+        return s;
+    }
+    /*
+    *METODO eliminarCve, elimina una fila por su clave
+    *@param cve:la clave a eliminar
+    */
+    public void elimanarCve(int cve){
+        if(this.getArr().length == 1)
+            this.setArr(null); //el arreglo vacio
+        else{
+            String tmp [][] = new String [this.getArr().length-1][4];
+            int j=0, i;
+            for(i=0; i <this.getArr().length;i++){
+                if(i !=cve){
+                    tmp[j][0] = this.getArr()[i][0];
+                    tmp[j][0] = this.getArr()[i][1];
+                    tmp[j][0] = this.getArr()[i][2];
+                    tmp[j][0] = this.getArr()[i][3];
+                    j++;
+                }
+            }
+                //actualizar el arreglo debido a que se elimino la fila deseada
+                this.setArr(tmp);
+        }
+    }
 
         
     
