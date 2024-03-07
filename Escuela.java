@@ -86,7 +86,39 @@ class Alumno extends Escuela{//extends es la herenica de escuela
     public void setSemestre(int semestre) {
         this.semestre = semestre;
     }
-    
-    
 
+
+}
+class Profesor extends Escuela{
+    private String carrera;
+    private String jefatura;
+
+    public Profesor(int id, String nombre, String apellido, int edad, String carrera, String jefatura) {
+        super(id, nombre, apellido, edad);
+        this.carrera = carrera;
+        this.jefatura = jefatura;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
+
+    public String getJefatura() {
+        return jefatura;
+    }
+
+    public void setJefatura(String jefatura) {
+        this.jefatura = jefatura;
+    }
+    
+    public void asentarCalificacion(){
+    float calificacion;
+    calificacion  = datoFloat();//dato float es un metodo de read
+    this.setCalif(calificaicon);
+    }
+    
 }
