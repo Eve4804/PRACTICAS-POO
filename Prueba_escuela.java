@@ -2,25 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package tema3_4;
+package tema_3_4;
 
 /**
  *
  * @author Usuario
  */
-public class Prueba_escuela {
+public class Prueba_escuela
+{
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        //se genera objeto a escuela
-        Escuela objEscuela = new Escuela(1, "EVELYN", "GONGORA", 18 );
-        objEscuela.asistencia();
+    public static void main(String[] args)
+    {
+        // crear objetos de las clases hijas
+        //clase_hija nomObj = new Clases_Hija(parametros)
+        Alumno objAlu = new Alumno("TIC´s", 3, 1, "Julian", "Hernandez", "22");
         
-        //objeto a alumno
-        Alumno objAlu = new Alumno("TIC´S", 2, 23280661, "Eve", "Arriaga", 18);
-        objAlu.asistencia();
+        objAlu.asistencia();//metodo heredado
+        objAlu.verCalificaciones(); //metodo propio
+        
+
     }
     
 }
